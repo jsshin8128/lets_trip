@@ -1,0 +1,6 @@
+# 환경 변수 파일 제외
+.env
+
+# Node.js 의존성 폴더 제외
+node_modules/
+
