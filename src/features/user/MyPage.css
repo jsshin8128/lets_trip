@@ -1,0 +1,10 @@
+/* src/features/user/MyPage.css */
+.my-page-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .my-page-container h1 {
+    margin-bottom: 1rem;
+  }

@@ -10,8 +10,10 @@ const AuthRoutes = () => {
     <Routes>
       <Route path="signup" element={<SignUp />} />
       <Route path="login" element={<Login />} />
+      {/* 아이디/비밀번호 찾기 (미구현) */}
       <Route path="find-id" element={<div>아이디 찾기 페이지 (미구현)</div>} />
       <Route path="find-password" element={<div>비밀번호 찾기 페이지 (미구현)</div>} />
+      
       {/* 그 외 경로는 로그인 페이지로 리다이렉트 */}
       <Route path="*" element={<Navigate to="login" />} />
     </Routes>
@@ -19,3 +21,4 @@ const AuthRoutes = () => {
 };
 
 export default AuthRoutes;
+

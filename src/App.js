@@ -7,11 +7,20 @@ import AuthRoutes from './routes/authRoutes';       // 회원가입, 로그인 �
 import MeetingRoutes from './routes/meetingRoutes';   // 모임 목록, 모임 개설, 모임 상세 페이지
 import UserRoutes from './routes/userRoutes';         // 마이페이지, 프로필 등 사용자 관련 페이지
 
+import Header from './components/Header';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
+
+
+
+
 function App() {
   return (
     <div className="App">
-      {/* 헤더, 네비게이션, 공통 컴포넌트를 추가할 수 있습니다. */}
-      
+      {/* 공통 레이아웃: 헤더 & 내비게이션 */}
+      <Header />
+      <Navigation />
+  
       <Routes>
         {/* 인증 관련 경로 */}
         <Route path="/auth/*" element={<AuthRoutes />} />
@@ -29,7 +38,8 @@ function App() {
         <Route path="*" element={<div>404 Not Found</div>} />
       </Routes>
 
-      {/* Footer 등 공통 컴포넌트 추가 가능 */}
+      {/* 공통 레이아웃: 푸터 */}
+      <Footer />
     </div>
   );
 }
