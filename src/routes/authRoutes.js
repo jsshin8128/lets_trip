@@ -4,13 +4,14 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import SignUp from '../features/auth/SignUp';
 import Login from '../features/auth/Login';
 
-// 추후 '아이디 찾기', '비밀번호 찾기' 페이지가 구현되면 아래에 추가하면 됩니다.
 const AuthRoutes = () => {
   return (
     <Routes>
+      {/* 회원가입 페이지 */}
       <Route path="signup" element={<SignUp />} />
+      {/* 로그인 페이지 */}
       <Route path="login" element={<Login />} />
-      {/* 아이디/비밀번호 찾기 (미구현) */}
+      {/* 아이디/비밀번호 찾기 페이지 (추후 구현) */}
       <Route path="find-id" element={<div>아이디 찾기 페이지 (미구현)</div>} />
       <Route path="find-password" element={<div>비밀번호 찾기 페이지 (미구현)</div>} />
       
@@ -21,4 +22,3 @@ const AuthRoutes = () => {
 };
 
 export default AuthRoutes;
-

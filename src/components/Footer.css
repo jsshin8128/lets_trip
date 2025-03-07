@@ -4,8 +4,13 @@
     color: #ffffff;
     padding: 1.5rem;
     text-align: center;
-    margin-top: 2rem;
     border-top: 2px solid #444;
     font-size: 1rem;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
 }

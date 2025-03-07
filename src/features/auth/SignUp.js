@@ -1,17 +1,18 @@
 // src/features/auth/SignUp.js
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './SignUp.css';
 import { signUpWithEmail, signUpWithGoogle } from '../../services/api';
+import defaultProfileImage from '../../assets/images/default-profile.png';
 
 const SignUp = () => {
   const [form, setForm] = useState({
     email: '',
     password: '',
-    confirmPassword: '',
     nickname: '',
   });
   const [profileImage, setProfileImage] = useState(null);
+  const [previewImage, setPreviewImage] = useState(null);
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -20,15 +21,17 @@ const SignUp = () => {
   };
 
   const handleFileChange = (e) => {
-    setProfileImage(e.target.files[0]);
+    const file = e.target.files[0];
+    setProfileImage(file);
+    if (file) {
+      setPreviewImage(URL.createObjectURL(file));
+    } else {
+      setPreviewImage(null);
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (form.password !== form.confirmPassword) {
-      alert('비밀번호가 일치하지 않습니다.');
-      return;
-    }
     try {
       // 이메일 회원가입 API 호출
       await signUpWithEmail(form.email, form.password, form.nickname, profileImage);
@@ -56,6 +59,7 @@ const SignUp = () => {
       <button onClick={handleGoogleSignUp} className="google-signup-button">
         구글 간편 회원가입
       </button>
+      <div className="divider">or</div>
       <form onSubmit={handleSubmit} className="signup-form">
         <div className="form-group">
           <label>이메일</label>
@@ -78,16 +82,6 @@ const SignUp = () => {
           />
         </div>
         <div className="form-group">
-          <label>비밀번호 확인</label>
-          <input
-            type="password"
-            name="confirmPassword"
-            value={form.confirmPassword}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className="form-group">
           <label>닉네임</label>
           <input
             type="text"
@@ -97,12 +91,23 @@ const SignUp = () => {
             required
           />
         </div>
-        <div className="form-group">
-          <label>프로필 이미지</label>
-          <input type="file" accept="image/*" onChange={handleFileChange} />
+        <div className="form-group profile-group">
+          <label>프로필 이미지 (선택)</label>
+          <div className="profile-upload">
+            <input type="file" accept="image/*" onChange={handleFileChange} />
+            <div className="profile-thumbnail">
+              <img
+                src={previewImage || defaultProfileImage}
+                alt="프로필 미리보기"
+              />
+            </div>
+          </div>
         </div>
         <button type="submit" className="signup-button">회원가입</button>
       </form>
+      <div className="login-link">
+        이미 계정이 있으신가요? <Link to="/auth/login">로그인 하기</Link>
+      </div>
     </div>
   );
 };

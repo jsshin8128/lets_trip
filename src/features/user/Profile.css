@@ -1,13 +1,120 @@
-/* src/features/user/Profile.css */
+/* 컨테이너: 중앙 정렬, 적절한 최대 폭 */
 .profile-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-  
-  .profile-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* 카드 스타일 */
+.profile-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden; /* 헤더/바디 배경색이 다를 때 모서리 깔끔하게 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 카드 헤더 */
+.profile-card-header {
+  background-color: #f8f9fa; /* 살짝 다른 배경색으로 구분 */
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.profile-card-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+/* 카드 본문 */
+.profile-card-body {
+  padding: 1rem 1.5rem 1.5rem; /* 좌우 조금 더 여유 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 프로필 이미지, 업로드 섹션 */
+.profile-avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.profile-avatar-large {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+  border: 2px solid #007bff;
+}
+
+.upload-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.45rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.upload-button:hover {
+  background-color: #0056b3;
+}
+
+/* 업로드 힌트 문구 */
+.upload-hint {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* 폼 */
+.profile-form {
+  width: 100%;
+  max-width: 400px; /* 닉네임 입력 영역을 좀 더 좁게 */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* 폼 그룹 */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.form-group input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+/* 기본 버튼 스타일 */
+.primary-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.65rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.primary-button:hover {
+  background-color: #0056b3;
+}

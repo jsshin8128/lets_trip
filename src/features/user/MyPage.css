@@ -1,10 +1,102 @@
-/* src/features/user/MyPage.css */
 .my-page-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-  
-  .my-page-container h1 {
-    margin-bottom: 1rem;
-  }
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* 프로필 카드 영역 */
+.profile-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.profile-header:hover {
+  background: #f7f7f7;
+}
+
+.profile-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.profile-info p {
+  margin: 0;
+  color: #666;
+}
+
+/* 탭 영역 */
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  flex: 1;
+  padding: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.tab.active {
+  border-bottom: 3px solid #007bff;
+  font-weight: bold;
+}
+
+/* 모임 카드 */
+.meeting-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.meeting-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.meeting-info p {
+  margin: 0.3rem 0;
+  color: #555;
+}
+
+.meeting-action .danger-button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.meeting-action .danger-button:hover {
+  background-color: #c82333;
+}

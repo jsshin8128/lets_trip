@@ -8,18 +8,13 @@ import MeetingRoutes from './routes/meetingRoutes';   // 모임 목록, 모임 �
 import UserRoutes from './routes/userRoutes';         // 마이페이지, 프로필 등 사용자 관련 페이지
 
 import Header from './components/Header';
-import Navigation from './components/Navigation';
 import Footer from './components/Footer';
-
-
-
 
 function App() {
   return (
     <div className="App">
       {/* 공통 레이아웃: 헤더 & 내비게이션 */}
       <Header />
-      <Navigation />
   
       <Routes>
         {/* 인증 관련 경로 */}
